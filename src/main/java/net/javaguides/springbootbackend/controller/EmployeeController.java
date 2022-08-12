@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin("*") // Allow all access(CORS)
 @RestController
 @RequestMapping("/api/v1/employees")
 public class EmployeeController {
@@ -18,7 +18,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping
+    @GetMapping // org.springframework.web.bind.annotation
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
     }
